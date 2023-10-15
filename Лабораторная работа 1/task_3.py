@@ -2,9 +2,9 @@ list_players = ["Маша", "Петя", "Саша", "Оля", "Кирилл", "�
 
 # TODO Разделите участников на две команды
 
-quantityPlayers = len(list_players)
-firstHalf = list_players[0:3]
-print(firstHalf)
+quantity_players = len(list_players) // 2
+first_half = list_players[:quantity_players]
+print(first_half)
 
-secondHalf = list_players[3:6]
-print(secondHalf)
+secon_half = list_players[quantity_players:]
+print(secon_half)
