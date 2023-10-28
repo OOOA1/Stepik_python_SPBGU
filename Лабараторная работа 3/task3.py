@@ -40,6 +40,7 @@ main_str = """
 Свои мне сказки говорил.
 """
 
+
 # TODO Распечатайте в столбик букву и её частоту в тексте
 
 def count_letters(text):
@@ -51,10 +52,11 @@ def count_letters(text):
     for char in text:
         # Проверяем, является ли символ буквой
         if char.isalpha():
-        # Если символ - буква, добавляем его в словарь или увеличиваем счетчик
+            # Если символ - буква, добавляем его в словарь или увеличиваем счетчик
             letter_count[char] = letter_count.get(char, 0) + 1
             # Возвращаем словарь с буквами и их количеством
     return letter_count
+
 
 def calculate_frequency(letter_count):
     # Создаем пустой словарь для частот
@@ -63,18 +65,24 @@ def calculate_frequency(letter_count):
     total_letters = sum(letter_count.values())
     # Перебираем каждую букву в словаре с количеством
     for letter, count in letter_count.items():
-    # Вычисляем частоту буквы, округляя до двух знаков после запятой
+        # Вычисляем частоту буквы, округляя до двух знаков после запятой
         frequency = round(count / total_letters, 2)
-    # Добавляем букву и ее частоту в словарь
+        # Добавляем букву и ее частоту в словарь
         letter_frequency[letter] = frequency
         # Возвращаем словарь с буквами и их частотой
     return letter_frequency
+
 
 # Вызываем функцию count_letters для подсчета букв
 letters_count = count_letters(main_str)
 
 # Вызываем функцию calculate_frequency для вычисления частот букв
 letter_frequency = calculate_frequency(letters_count)
+
+# Распечатываем буквы и их частоты
+for letter, frequency in letter_frequency.items():
+    print(f"{letter}: {frequency}")
+
 
 # Распечатываем буквы и их частоты
 for letter, frequency in letter_frequency.items():
